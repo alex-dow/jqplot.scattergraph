@@ -8,3 +8,71 @@ This is released under the MIT License and is in no way complete. It will be nic
 get matured eventually.
 
 -- Alex Dowgailenko
+
+Here is an example of how I used it:
+
+$.jqplot('results-graph',points, {
+	sortData: false,
+	title: 'Crosstable Cooccurrence',
+	seriesDefaults: {
+		renderer: $.jqplot.ScatterLineRenderer,
+		markerRenderer: $.jqplot.ScatterMarkerRenderer,
+		markerOptions: {
+			style: 'scatter',
+			allowZero: true,
+			printSize: false
+		},
+	},
+	series: sizes,
+	axesDefaults: {
+		tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+		tickOptions: {
+			showGridline: false,
+			angle: -30,
+			fontSize: '10pt'
+		}
+	},
+	axes: {
+		xaxis: {
+			ticks: xAxisLabels,
+			renderer: $.jqplot.CategoryAxisRenderer,
+			tickOptions: {
+				angle: -60
+			},
+			autoscale: true
+		},
+		yaxis: {
+			ticks: yAxisLabels,
+			renderer: $.jqplot.CategoryAxisRenderer,
+			autoscale: true,
+			tickOptions: {
+				angle: -10
+			}
+		}
+	}
+});
+
+You need to provide two sets of information: the list of points, and the list of sizes for each point.
+
+The points are a multidimensional array representing a table:
+
+PHP:
+$array['row1'] = array(1,2,3,4,5,6,7)
+$array['row2'] = array(1,2,3,4,5,6,7)
+
+JavaScript:
+
+var points = new Array();
+points.push(new Array(1,2,3,4,5,6,7))
+points.push(new Array(1,2,3,4,5,6,7))
+
+the sizes array contains a list of sizes for each point, using the markerOptions config object:
+
+JavaScript:
+
+var sizes = new Array();
+sizes.push({markerOptions: {size: 1}});
+sizes.push({markerOptions: {size: 100}});
+
+This is of course not the BEST way of setting up your graph, but it works. Hopefully these plugins will improve over time.
+
