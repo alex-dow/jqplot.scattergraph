@@ -1,0 +1,10 @@
+--
+- SCATTER GRAPH PLUGIN FOR JQPLOT
+--
+
+There was no scatter graph support in jqPlot, but I needed a scatter graph. So I made one.
+
+This is released under the MIT License and is in no way complete. It will be nice to see this
+get matured eventually.
+
+-- Alex Dowgailenko
