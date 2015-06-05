@@ -7,6 +7,8 @@ There was no scatter graph support in jqPlot, but I needed a scatter graph. So I
 This is released under the MIT License and is in no way complete. It will be nice to see this
 get matured eventually.
 
+Yes, it would have been nice, but there is no point. Far better tools exist for your scatter graph needs. This project is dead and the repo will be deleted eventually.
+
 -- Alex Dowgailenko
 
 Here is an example of how I used it:
